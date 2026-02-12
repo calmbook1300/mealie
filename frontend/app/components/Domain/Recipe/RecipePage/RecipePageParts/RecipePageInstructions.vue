@@ -109,7 +109,7 @@
         minor
         cancel
         color="primary"
-        @click="toggleCookMode()"
+        @click="toggleCookModeThenScroll()"
       >
         <template #icon>
           {{ $globals.icons.primary }}
@@ -426,6 +426,12 @@ const showTitleEditor = ref<{ [key: string]: boolean }>({});
 
 // ===============================================================
 // UI State Helpers
+
+async function toggleCookModeThenScroll() {
+  toggleCookMode();
+  await nextTick();
+  window.scrollTo(0, 0);
+}
 
 function hasSectionTitle(title: string | undefined) {
   return !(title === null || title === "" || title === undefined);

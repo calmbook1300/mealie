@@ -1,3 +1,5 @@
+# syntax=docker/dockerfile:1.2
+
 ###############################################
 # Frontend Build
 ###############################################
@@ -6,9 +8,13 @@ FROM node:24@sha256:e9891237dfbb1de60ce19e9ff9fac5d73ad9c37da303ad72ff2a425ad105
 
 WORKDIR /frontend
 
-COPY frontend .
+# Set YARN_CACHE_FOLDER to a specific directory
+ENV YARN_CACHE_FOLDER=/usr/local/share/.cache/yarn/v1
 
-RUN yarn install \
+COPY frontend/package.json frontend/yarn.lock .
+
+RUN --mount=type=cache,target=$YARN_CACHE_FOLDER \
+    yarn install \
     --prefer-offline \
     --frozen-lockfile \
     --non-interactive \
@@ -16,6 +22,7 @@ RUN yarn install \
     # https://github.com/docker/build-push-action/issues/471
     --network-timeout 1000000
 
+COPY frontend .
 RUN yarn generate
 
 ###############################################
