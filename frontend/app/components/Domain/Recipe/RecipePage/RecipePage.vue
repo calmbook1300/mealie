@@ -105,11 +105,11 @@
         </v-card-text>
       </v-card>
       <WakelockSwitch />
-      <RecipePageComments
+      <!--RecipePageComments
         v-if="!recipe.settings?.disableComments && !isEditForm && !isCookMode"
         v-model="recipe"
         class="px-1 my-4 d-print-none"
-      />
+      /-->
       <RecipePrintContainer :recipe="recipe" :scale="scale" />
     </v-container>
     <!-- Cook mode displayes two columns with ingredients and instructions side by side, each being scrolled individually, allowing to view both at the same time -->

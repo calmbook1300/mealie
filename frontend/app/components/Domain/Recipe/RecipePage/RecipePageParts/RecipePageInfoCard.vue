@@ -41,7 +41,7 @@
                   />
                 </v-col>
               </v-row>
-              <v-row no-gutters>
+              <!--v-row no-gutters>
                 <v-col
                   cols="12"
                   class="d-flex flex-wrap justify-center"
@@ -52,7 +52,7 @@
                     class="mb-4"
                   />
                 </v-col>
-              </v-row>
+              </v-row-->
             </div>
             <div v-if="recipe.prepTime || recipe.totalTime || recipe.performTime" class="mx-6">
               <RecipeTimeCard

@@ -1,0 +1,12 @@
+/* Fix ingredient sub-text spacing */
+.ingredient-item { row-gap: 0 !important; }
+.ingredient-item.text-subtitle-1 { line-height: 1.5 !important; }
+
+/* Reduce recipe image container size */
+.v-card .d-flex .v-responsive.v-img { height: 300px !important; }
+
+/* Change recipe image to "contain" rather than "cover" so that it isn't stretched/clipped */
+.v-img__img--cover { object-fit: contain !important; }
+
+/* Fix recipe-without-image svg width so that recipe title isn't misaligned */
+a.v-card .v-list-item .icon-slot { width: 125px; }
