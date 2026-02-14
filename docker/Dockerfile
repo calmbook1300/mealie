@@ -1,5 +1,3 @@
-# syntax=docker/dockerfile:1.2
-
 ###############################################
 # Frontend Build
 ###############################################
@@ -8,13 +6,9 @@ FROM node:24@sha256:e9891237dfbb1de60ce19e9ff9fac5d73ad9c37da303ad72ff2a425ad105
 
 WORKDIR /frontend
 
-# Set YARN_CACHE_FOLDER to a specific directory
-ENV YARN_CACHE_FOLDER=/usr/local/share/.cache/yarn/v1
-
 COPY frontend/package.json frontend/yarn.lock .
 
-RUN --mount=type=cache,target=$YARN_CACHE_FOLDER \
-    yarn install \
+RUN yarn install \
     --prefer-offline \
     --frozen-lockfile \
     --non-interactive \
@@ -155,7 +149,7 @@ COPY ./docker/healthcheck.sh $MEALIE_HOME/healthcheck.sh
 RUN chmod +x $MEALIE_HOME/healthcheck.sh
 HEALTHCHECK CMD $MEALIE_HOME/healthcheck.sh
 
-ENV HOST 0.0.0.0
+ENV HOST=0.0.0.0
 
 EXPOSE ${APP_PORT}
 COPY ./docker/entry.sh $MEALIE_HOME/run.sh
