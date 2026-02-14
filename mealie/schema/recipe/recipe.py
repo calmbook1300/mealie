@@ -347,12 +347,23 @@ class Recipe(RecipeSummary):
                 .all()
             )
 
+            food_ids = (
+                session.execute(
+                    select(IngredientFoodModel.id).filter(
+                        IngredientFoodModel.name_normalized.op("%>")(search),
+                    )
+                )
+                .scalars()
+                .all()
+            )
+
             session.execute(text(f"set pg_trgm.word_similarity_threshold = {cls._fuzzy_similarity_threshold};"))
             return query.filter(
                 or_(
                     RecipeModel.name_normalized.op("%>")(search),
                     RecipeModel.description_normalized.op("%>")(search),
                     RecipeModel.recipe_ingredient.any(RecipeIngredientModel.id.in_(ingredient_ids)),
+                    RecipeModel.recipe_ingredient.any(RecipeIngredientModel.food_id.in_(food_ids)),
                 )
             ).order_by(  # trigram ordering could be too slow on million record db, but is fine with thousands.
                 func.least(
