@@ -15,6 +15,7 @@
           :placeholder="$t('search.search-placeholder')"
           :prepend-inner-icon="$globals.icons.search"
           @keyup.enter="hideKeyboard"
+          @click:clear="hideKeyboard"
         />
       </div>
       <div class="search-row">
