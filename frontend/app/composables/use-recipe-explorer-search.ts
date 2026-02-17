@@ -63,8 +63,8 @@ function createRecipeExplorerSearchState(groupSlug: ComputedRef<string>): Recipe
     auto: true,
     ready: false,
     search: "",
-    orderBy: "created_at",
-    orderDirection: "desc" as "asc" | "desc",
+    orderBy: "name",
+    orderDirection: "asc" as "asc" | "desc",
     requireAllCategories: false,
     requireAllTags: false,
     requireAllTools: false,
@@ -89,8 +89,8 @@ function createRecipeExplorerSearchState(groupSlug: ComputedRef<string>): Recipe
   // Query defaults
   const queryDefaults = {
     search: "",
-    orderBy: "created_at",
-    orderDirection: "desc" as "asc" | "desc",
+    orderBy: "name",
+    orderDirection: "asc" as "asc" | "desc",
     requireAllCategories: false,
     requireAllTags: false,
     requireAllTools: false,
