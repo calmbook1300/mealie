@@ -235,27 +235,15 @@ const topLinks = computed<SideBarLink[]>(() => [
     restricted: false,
   },
   {
-    icon: $globals.icons.calendarMultiselect,
-    title: i18n.t("meal-plan.meal-planner"),
-    to: "/household/mealplan/planner/view",
+    icon: $globals.icons.tags,
+    to: `/g/${groupSlug.value}/recipes/tags`,
+    title: i18n.t("sidebar.tags"),
     restricted: true,
   },
   {
-    icon: $globals.icons.formatListCheck,
-    title: i18n.t("shopping-list.shopping-lists"),
-    to: "/shopping-lists",
-    restricted: true,
-  },
-  {
-    icon: $globals.icons.timelineText,
-    title: i18n.t("recipe.timeline"),
-    to: `/g/${groupSlug.value}/recipes/timeline`,
-    restricted: true,
-  },
-  {
-    icon: $globals.icons.book,
-    to: `/g/${groupSlug.value}/cookbooks`,
-    title: i18n.t("cookbook.cookbooks"),
+    icon: $globals.icons.categories,
+    to: `/g/${groupSlug.value}/recipes/categories`,
+    title: i18n.t("sidebar.categories"),
     restricted: true,
   },
   {
@@ -264,15 +252,27 @@ const topLinks = computed<SideBarLink[]>(() => [
     restricted: true,
     children: [
       {
-        icon: $globals.icons.categories,
-        to: `/g/${groupSlug.value}/recipes/categories`,
-        title: i18n.t("sidebar.categories"),
+        icon: $globals.icons.calendarMultiselect,
+        title: i18n.t("meal-plan.meal-planner"),
+        to: "/household/mealplan/planner/view",
         restricted: true,
       },
       {
-        icon: $globals.icons.tags,
-        to: `/g/${groupSlug.value}/recipes/tags`,
-        title: i18n.t("sidebar.tags"),
+        icon: $globals.icons.formatListCheck,
+        title: i18n.t("shopping-list.shopping-lists"),
+        to: "/shopping-lists",
+        restricted: true,
+      },
+      {
+        icon: $globals.icons.timelineText,
+        title: i18n.t("recipe.timeline"),
+        to: `/g/${groupSlug.value}/recipes/timeline`,
+        restricted: true,
+      },
+      {
+        icon: $globals.icons.book,
+        to: `/g/${groupSlug.value}/cookbooks`,
+        title: i18n.t("cookbook.cookbooks"),
         restricted: true,
       },
       {
