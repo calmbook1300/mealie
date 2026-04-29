@@ -36,7 +36,7 @@
             </div>
           </v-expand-transition>
         </RecipeCardImage>
-        <v-card-title class="mb-n3 px-4" style="font-size: 1.25rem;">
+        <v-card-title class="mb-n3 px-4 text-center" style="font-size: 1rem;">
           {{ name }}
         </v-card-title>
 
@@ -52,10 +52,10 @@
             />
             <div v-else class="px-1" /> <!-- Empty div to keep the layout consistent -->
 
-            <RecipeCardRating
+            <!--RecipeCardRating
               :model-value="rating"
               :recipe-id="recipeId"
-            />
+            /-->
             <v-spacer />
             <RecipeChips
               :truncate="true"
@@ -66,6 +66,7 @@
               url-prefix="tags"
               v-bind="$attrs"
             />
+            <v-spacer />
 
             <!-- If we're not logged-in, no items display, so we hide this menu -->
             <RecipeContextMenu
