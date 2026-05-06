@@ -1,4 +1,4 @@
-/* Fix ingredient sub-text spacing */
+/* Change ingredient note text to be closer to the associated ingredient text  */
 .ingredient-item { row-gap: 0 !important; }
 .ingredient-item.text-subtitle-1 { line-height: 1.5 !important; }
 
@@ -10,3 +10,20 @@
 
 /* Fix recipe-without-image svg width so that recipe title isn't misaligned */
 a.v-card .v-list-item .icon-slot { width: 125px; }
+
+/* Change recipe ingredient text to normal weight and spacing */
+.ingredient-item p {
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+/* Change recipe instruction text to normal weight and spacing */
+section .markdown {
+  font-weight: normal;
+  letter-spacing: normal;
+}
+
+/* Change left size nav section text to default size (was smaller than recipe text) */
+.v-list--nav .v-list-item-title {
+  font-size: inherit;
+}
