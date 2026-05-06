@@ -1,15 +1,25 @@
 /* Change ingredient note text to be closer to the associated ingredient text  */
-.ingredient-item { row-gap: 0 !important; }
-.ingredient-item.text-subtitle-1 { line-height: 1.5 !important; }
+.ingredient-item {
+	row-gap: 0 !important;
+}
+.ingredient-item.text-subtitle-1 {
+	line-height: 1.5 !important;
+}
 
 /* Reduce recipe image container size */
-.v-card .d-flex .v-responsive.v-img { height: 300px !important; }
+.v-card .d-flex .v-responsive.v-img {
+	height: 300px !important;
+}
 
 /* Change recipe image to "contain" rather than "cover" so that it isn't stretched/clipped */
-.v-img__img--cover { object-fit: contain !important; }
+.v-img__img--cover {
+	object-fit: contain !important;
+}
 
 /* Fix recipe-without-image svg width so that recipe title isn't misaligned */
-a.v-card .v-list-item .icon-slot { width: 125px; }
+a.v-card .v-list-item .icon-slot {
+	width: 125px;
+}
 
 /* Change recipe ingredient text to normal weight and spacing */
 .ingredient-item p {
@@ -24,6 +34,7 @@ section .markdown {
 }
 
 /* Change left size nav section text to default size (was smaller than recipe text) */
-.v-list--nav .v-list-item-title {
-  font-size: inherit;
+.v-list-item--nav .v-list-item-title {
+	font-size: inherit;
+	line-height: inherit;
 }
