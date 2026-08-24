@@ -1,23 +1,18 @@
 ###############################################
 # Frontend Build
 ###############################################
-FROM node:24@sha256:5711a0d445a1af54af9589066c646df387d1831a608226f4cd694fc59e745059 \
+FROM node:24@sha256:934240a162082fd8b8a2f90cd5114446443f1eba1c5378f6687167ca405e6584 \
     AS frontend-builder
+
+RUN npm install --global pnpm@11
 
 WORKDIR /frontend
 
-COPY frontend/package.json frontend/yarn.lock .
-
-RUN yarn install \
-    --prefer-offline \
-    --frozen-lockfile \
-    --non-interactive \
-    --production=false \
-    # https://github.com/docker/build-push-action/issues/471
-    --network-timeout 1000000
-
 COPY frontend .
-RUN yarn generate
+
+RUN pnpm clean-install
+
+RUN pnpm generate
 
 ###############################################
 # Base Image - Python
