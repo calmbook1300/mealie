@@ -276,6 +276,8 @@
     "create-a-new-meal-plan": "Создать новый план питания",
     "update-this-meal-plan": "Обновить план питания",
     "dinner-this-week": "Ужин на этой неделе",
+    "edit-meal-plan": "Edit Meal Plan",
+    "remove-from-plan": "Remove from Meal Plan",
     "meal-planner": "Планировщик питания",
     "any-category": "Любая категория",
     "any-tag": "Любая метка",
@@ -588,6 +590,8 @@
     "parser": {
       "ingredient-parser": "Разделитель ингредиентов",
       "select-parser": "Выбрать Разделитель",
+      "dont-show-again": "Don't show this again",
+      "try-again-with-parser": "Try again with {parser}",
       "natural-language-processor": "Обработчик естественного языка",
       "brute-parser": "Грубый Парсер",
       "openai-parser": "Анализ OpenAI",
@@ -597,11 +601,16 @@
       "this-food-could-not-be-parsed-automatically": "Этот продукт не может быть обработан автоматически",
       "review-parsed-ingredients": "Посмотреть распознанные ингредиенты",
       "confidence-score": "Оценка уверенности",
-      "ingredient-parser-description": "Ваши ингредиенты успешно распознаны. Просмотрите ингредиенты, насчёт которых мы не уверены.",
-      "ingredient-parser-final-review-description": "После того как вы проверите все ингредиенты, у вас будет еще одна возможность проверить их, прежде чем применить изменения к рецепту.",
+      "ingredient-parser-headline": "Ingredients Parsed",
+      "ingredient-parser-title": "What's next",
+      "ingredient-parser-description": "You may need to confirm results we're not sure about or create new foods or units that are required by this recipe. We'll let you know what's needed.",
+      "ingredient-parser-final-review-description": "Once everything looks good, you can review the final results, then apply the changes to this recipe.",
       "add-text-as-alias-for-item": "Добавить \"{text}\" как псевдоним для {item}",
       "delete-item": "Удалить",
-      "parsing-ingredients": "Анализ ингредиентов..."
+      "parsing-ingredients": "Анализ ингредиентов...",
+      "ingredient-parser-result-title": "For this recipe",
+      "ingredient-parser-result-success": "No ingredients auto parsed | {count} ingredient auto parsed | {count} ingredients auto parsed",
+      "ingredient-parser-result-failed": "No ingredients to review | {count} ingredient to review | {count} ingredients to review"
     },
     "reset-servings-count": "Сбросить количество порций",
     "not-linked-ingredients": "Дополнительные ингредиенты",
@@ -960,15 +969,32 @@
     "select-language": "Выберите язык",
     "columns": "Столбцы",
     "combine": "Объединить",
+    "delete-unused": "Удалить неиспользуемое",
+    "delete-unused-more": "+ {count} еще",
+    "recipe-count": "Количество рецептов",
     "categories": {
       "edit-category": "Изменить категорию",
       "new-category": "Новая Категория",
-      "category-data": "Данные категории"
+      "category-data": "Данные категории",
+      "combine-category": "Объединить категории",
+      "source-category": "Категория источника",
+      "target-category": "Целевая категория",
+      "merge-dialog-text": "Сочетание выбранных категорий позволит объединить категорию источника и целевую категорию. Категория источника будет удалена, и все ссылки на категорию источника будут обновлены для указания на целевую категорию.",
+      "merge-category-example": "Объединение {category1} в {category2}",
+      "delete-unused-confirm": "Вы уверены, что хотите удалить неиспользуемую категорию? Это действие нельзя отменить. | Удалить эти {count} категории? Это действие не может быть отменено.",
+      "no-unused-categories": "Нет неиспользуемых категорий для удаления"
     },
     "tags": {
       "new-tag": "Новый тег",
       "edit-tag": "Изменить тег",
-      "tag-data": "Данные тега"
+      "tag-data": "Данные тега",
+      "combine-tag": "Объединить тег",
+      "source-tag": "Тег источника",
+      "target-tag": "Целевой тег",
+      "merge-dialog-text": "Объединение выбранных тегов позволит объединить исходный тег и целевой тег. Тег источника будет удален и все ссылки на тег источника будут обновлены для указания на тег назначения.",
+      "merge-tag-example": "Объединение {tag1} в {tag2}",
+      "delete-unused-confirm": "Вы уверены, что хотите удалить этот неиспользованный тег? Это действие нельзя  отменить. | Удалить эти {count} теги? Это не может быть отменено.",
+      "no-unused-tags": "Нет неиспользуемых тегов для удаления"
     },
     "tools": {
       "new-tool": "Добавить инструмент",
