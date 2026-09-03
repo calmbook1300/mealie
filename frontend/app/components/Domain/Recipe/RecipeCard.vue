@@ -177,6 +177,7 @@ const cursor = computed(() => showRecipeContent.value ? "pointer" : "auto");
   flex-direction: column;
   justify-content: flex-end;
   min-height: 84px;
+  margin-top: 6px;
 }
 .recipe-card-footer--no-tags {
   justify-content: center;
@@ -187,6 +188,8 @@ const cursor = computed(() => showRecipeContent.value ? "pointer" : "auto");
   gap: 4px;
   min-width: 0;
   overflow: hidden;
+  align-items: center;
+  justify-content: center;
 }
 .recipe-card-tags .v-chip {
   flex: 0 1 auto;
