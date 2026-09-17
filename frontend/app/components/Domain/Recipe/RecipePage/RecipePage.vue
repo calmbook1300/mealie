@@ -114,11 +114,11 @@
         </v-card-text>
       </v-card>
       <WakelockSwitch />
-      <!--RecipePageComments
-        v-if="!recipe.settings?.disableComments && !isEditForm && !isCookMode"
+      <RecipePageComments
+        v-if="!disableComments && !isEditForm && !isCookMode"
         v-model="recipe"
         class="px-1 my-4 d-print-none"
-      /-->
+      />
       <RecipePrintContainer :recipe="recipe" :scale="scale" />
     </v-container>
     <!-- Floating save button when toolbar scrolls out of view -->
@@ -251,6 +251,7 @@ import RecipeDialogBulkAdd from "~/components/Domain/Recipe/RecipeDialogBulkAdd.
 import RecipeNotes from "~/components/Domain/Recipe/RecipeNotes.vue";
 import { useLoggedInState } from "~/composables/use-logged-in-state";
 import { useNavigationWarning } from "~/composables/use-navigation-warning";
+import { useHouseholdSelf } from "~/composables/use-households";
 
 const recipe = defineModel<NoUndefinedField<Recipe>>({ required: true });
 
@@ -258,6 +259,14 @@ const display = useDisplay();
 const auth = useMealieAuth();
 const route = useRoute();
 const { isOwnGroup } = useLoggedInState();
+
+const { household } = useHouseholdSelf();
+
+const disableComments = computed(() =>
+  household.value?.preferences?.recipeDisableComments
+  || recipe.value?.settings?.disableComments
+  || false,
+);
 
 const groupSlug = computed(() => (route.params.groupSlug as string) || auth.user?.value?.groupSlug || "");
 const ingredientStorageKey = computed(() => `recipe-ingredients:${recipe.value.id || recipe.value.slug}:checked`);
