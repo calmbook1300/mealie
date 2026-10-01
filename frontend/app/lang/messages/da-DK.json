@@ -603,6 +603,13 @@
     "remove-image": "Fjern billede",
     "nextStep": "Næste trin",
     "recipe-actions": "Opskriftshandlinger",
+    "unit-system": {
+      "as-written": "Som skrevet",
+      "metric": "Metrisk",
+      "metric-with-hint": "Metrisk (g, mL, etc.)",
+      "imperial": "Amerikansk",
+      "imperial-with-hint": "Amerikansk (kopper, ounces, etc.)"
+    },
     "parser": {
       "ingredient-parser": "Ingrediensfortolker",
       "select-parser": "Vælg fortolker",
